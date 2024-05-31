@@ -20,18 +20,18 @@ function NewPost({ onCancel, onAddPost }) {
       body: enteredBody,
       author: enteredAuthor
     };
-    onAddPost(postData);
-    onCancel();
+    onAddPost(postData); // Load onAddPost with "postdata"
+    onCancel(); // Close
   }
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <p>
-        <label htmlFor="body">Text</label>
+        <label htmlFor="body">Text:</label>
         <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
       </p>
       <p>
-        <label htmlFor="name">Your name</label>
+        <label htmlFor="name">Your name:</label>
         <input type="text" id="name" required onChange={authorChangeHandler} />
       </p>
       <p className={classes.actions}>
