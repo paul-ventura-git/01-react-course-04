@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import Post from './Post';
-import NewPost from './NewPost';
-import Modal from './Modal';
-import classes from '../assets/styles/PostsList.module.css';
+import Post from './Post/Post';
+import NewPost from '../NewPost';
+import Modal from '../Modal';
+import classes from '../../assets/styles/PostsList.module.css';
 
 function PostsList({ isPosting, onStopPosting }) {
   const [posts, setPosts] = useState([]);

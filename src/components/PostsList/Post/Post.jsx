@@ -1,4 +1,4 @@
-import classes from '../assets/styles/Post.module.css';
+import classes from '../../../assets/styles/Post.module.css';
 
 function Post({ author, body }) {
   return (
