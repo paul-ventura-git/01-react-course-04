@@ -26,14 +26,6 @@ function NewPost({ onAddPost }) {
     //onCancel(); // Close
   }
 
-  function onCancel() {
-    
-  }
-
-  function onAddPost() {
-    
-  }
-
   return (
     <Modal>
       <form className={classes.form} onSubmit={submitHandler}>
@@ -45,12 +37,14 @@ function NewPost({ onAddPost }) {
           <label htmlFor="name">Your name:</label>
           <input type="text" id="name" required onChange={authorChangeHandler} />
         </p>
-        <p className={classes.actions}>
-          <Link to='..' type="button">
-            Cancel
-          </Link>
-          <button type="submit" onClick={onAddPost}>Submit</button>
-        </p>
+        <div className={classes.actions}>
+          <div className={classes.back}>
+            <Link to='..'>
+              Cancel
+            </Link>
+          </div>
+          <button>Submit</button>
+        </div>
       </form>
     </Modal>
   );
