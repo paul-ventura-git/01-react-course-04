@@ -1,7 +1,6 @@
 import { useLoaderData, Link } from 'react-router-dom';
-import App from '../App'
 
-import Modal from '../components/Modal';
+import Modal from '../components/PostsList/Modal/Modal';
 import classes from '../assets/styles/PostDetails.module.css';
 
 function PostDetails() {
@@ -10,7 +9,7 @@ function PostDetails() {
   if (!post) {
     return (
       <Modal>
-        <App className={classes.details}>
+        <main className={classes.details}>
           <h1>Could not find post</h1>
           <p>Unfortunately, the requested post could not be found.</p>
           <p>
@@ -18,18 +17,25 @@ function PostDetails() {
               Okay
             </Link>
           </p>
-        </App>
+        </main>
       </Modal>
     );
   }
   return (
     <Modal>
-      <main className={classes.details}>
+      <main className={classes.details}>      
         <p className={classes.author}>{post.author}</p>
         <p className={classes.text}>{post.body}</p>
+        <p className={classes.text}>{post.id}</p>
       </main>
     </Modal>
   );
 }
 
 export default PostDetails;
+
+export async function loader({ params }) {
+  const response = await fetch('http://localhost:8080/posts/' + params.id);
+  const resData = await response.json();
+  return resData.post;
+}
