@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import Post from './Post/Post';
-import NewPost from '../NewPost';
-import Modal from '../Modal';
+import NewPost from './Modal/NewPost';
+import Modal from './Modal/Modal';
 import classes from '../../assets/styles/PostsList.module.css';
 
 function PostsList({ isPosting, onStopPosting }) {

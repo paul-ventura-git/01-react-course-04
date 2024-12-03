@@ -1,4 +1,5 @@
 import { useLoaderData, Link } from 'react-router-dom';
+import App from '../App'
 
 import Modal from '../components/Modal';
 import classes from '../assets/styles/PostDetails.module.css';
@@ -9,7 +10,7 @@ function PostDetails() {
   if (!post) {
     return (
       <Modal>
-        <main className={classes.details}>
+        <App className={classes.details}>
           <h1>Could not find post</h1>
           <p>Unfortunately, the requested post could not be found.</p>
           <p>
@@ -17,7 +18,7 @@ function PostDetails() {
               Okay
             </Link>
           </p>
-        </main>
+        </App>
       </Modal>
     );
   }
