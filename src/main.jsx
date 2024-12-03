@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Posts from './routes/Posts';
 import NewPost from './routes/NewPost';
 import RootLayout from './routes/RootLayout';
-import './assets/styles/index.css';
+import './index.css';
 
 const router = createBrowserRouter([
   {

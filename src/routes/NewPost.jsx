@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import classes from '../../../assets/styles/NewPost.module.css';
+import classes from '../assets/styles/NewPost.module.css';
 
 function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState('');
@@ -21,7 +21,15 @@ function NewPost({ onCancel, onAddPost }) {
       author: enteredAuthor
     };
     onAddPost(postData); // Load onAddPost with "postdata"
-    onCancel(); // Close
+    //onCancel(); // Close
+  }
+
+  function onCancel() {
+    
+  }
+
+  function onAddPost() {
+    
   }
 
   return (
@@ -38,7 +46,7 @@ function NewPost({ onCancel, onAddPost }) {
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
-        <button>Submit</button>
+        <button type="submit" onClick={onAddPost}>Submit</button>
       </p>
     </form>
   );
