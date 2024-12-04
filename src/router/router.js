@@ -1,8 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import Home, { loader as postsLoader } from '../routes/Home';
-import NewPost, { action as newPostsAction} from '../routes/NewPost';
-import PostDetails, { loader as postDetailsLoader } from '../routes/PostDetails';
+import Home from '../routes/Home';
+import { loader as postsLoader } from '../services/loaders-actions/loaderHome'
+import NewPost from '../routes/NewPost';
+import { action as newPostsAction} from '../services/loaders-actions/actionNewPost'
+import PostDetails from '../routes/PostDetails';
+import { loader2 as postDetailsLoader } from '../services/loaders-actions/loaderPostsDetails'
 import RootLayout from '../routes/RootLayout';
 import '../assets/styles/index.css';
 

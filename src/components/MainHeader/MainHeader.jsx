@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import classes from '../../assets/styles/MainHeader.module.css';
 
-function MainHeader({ onCreatePost }) {
+function MainHeader() {
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
@@ -11,7 +11,7 @@ function MainHeader({ onCreatePost }) {
         React Twitter prototype
       </h1>
       <p>
-        <button className={classes.button} onClick={onCreatePost}>
+        <button className={classes.button}>
           <Link to='/create-post'>
             <MdPostAdd size={18} />
             New Tweet

@@ -1,4 +1,4 @@
-import { Link, Form, redirect } from 'react-router-dom'
+import { Link, Form } from 'react-router-dom'
 
 import Modal from "../components/PostsList/Modal/Modal"
 import classes from '../assets/styles/NewPost.module.css';
@@ -30,18 +30,3 @@ function NewPost() {
 }
 
 export default NewPost;
-
-export async function action({ request }) {
-  const formData = await request.formData();
-  const postData = Object.fromEntries(formData.entries()); // { body: "...", author: "..."} 
-  
-  await fetch('http://localhost:8080/posts', {
-    method: 'POST',
-    body: JSON.stringify(postData),
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  });
-  return redirect('/');  
-  
-}
